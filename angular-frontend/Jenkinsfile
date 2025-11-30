@@ -6,7 +6,7 @@ pipeline{
   stages{
     stage("clone"){
       steps{
-        git url:
+        git url: "https://github.com/bvsaikr/Angular-10-Spring-Boot-CRUD-Full-Stack-App.git"
       }
     }
     stage("unitest"){
