@@ -16,7 +16,7 @@ pipeline{
     }
     stage("build"){
       steps{
-        sh 'sudo docker build -t febuild .
+        sh 'sudo docker build -t "febuild" .
       }
     }
   }
