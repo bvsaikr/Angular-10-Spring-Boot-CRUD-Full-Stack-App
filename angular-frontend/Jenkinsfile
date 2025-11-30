@@ -18,7 +18,9 @@ pipeline{
     }
     stage("build"){
       steps{
+        dir("(angular-frontend"){
         sh 'sudo docker build -t febuild .'
+      }
       }
     }
   }
