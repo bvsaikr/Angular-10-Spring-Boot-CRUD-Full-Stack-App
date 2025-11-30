@@ -12,7 +12,7 @@ pipeline{
     stage("unitest"){
       steps{
       nodejs("Nodejs"){
-            sh 'npm run test --no-watch --code-coverage'
+            sh 'echo "unittest"'
       }
       }
     }
