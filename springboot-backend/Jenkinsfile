@@ -1,0 +1,26 @@
+pipeline{
+  agent{
+    label "!built-in"
+  }
+  tools{
+    maven "Maven"
+  }
+  stages{
+    stage("clone"){
+      steps{
+        git url: "https://github.com/bvsaikr/Angular-10-Spring-Boot-CRUD-Full-Stack-App.git"
+      }
+      
+    }
+    stage("test"){
+      steps{
+        sh 'mvn clean test'
+      }
+    }
+    stage("build"){
+      steps{
+        sh 'sudo docker build -t beapp .'
+      }
+    }
+  }
+}
