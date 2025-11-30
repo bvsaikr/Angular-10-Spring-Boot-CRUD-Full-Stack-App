@@ -1,0 +1,23 @@
+pipeline{
+  agent{label "!built-in"}
+  tools{
+    nodejs "Nodejs"
+  }
+  stages{
+    stage("clone"){
+      steps{
+        git url:
+      }
+    }
+    stage("unitest"){
+      steps{
+            sh 'ng test --no-watch --code-coverage'
+      }
+    }
+    stage("build"){
+      steps{
+        sh 'sudo docker build -t febuild .
+      }
+    }
+  }
+}
